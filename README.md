@@ -8,9 +8,9 @@ A web-based version of Carvilla, implemented in **React.js**, delivering a full-
 - **React.js** – UI development  
 - **React Router** – Routing system  
 - **Redux Toolkit** – State management  
-- **LocalStorage / SessionStorage** – Persistent data  
+- **LocalStorage** – Persistent data  
 - **Formik + Yup** – Forms & validation  
-- **Vite / CRA** – Development & build  
+- **CRA** – Development & build  
 
 ---
 
