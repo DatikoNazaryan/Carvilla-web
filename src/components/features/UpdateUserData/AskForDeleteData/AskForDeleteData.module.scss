@@ -1,0 +1,20 @@
+.askQuestionForDalate {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.answer {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.answerBtn{
+    padding: 5px 15px;
+    margin: 5px;
+    border-radius: 15px;
+
+    &:hover {
+        background-color: #2684FF;
+    }
+}

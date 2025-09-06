@@ -1,0 +1,494 @@
+.form {
+  max-width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: space-between;
+  overflow-y: auto;
+  padding: 20px  60px;
+}
+
+.formBlock {
+  width: 100%;
+}
+
+  .label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+
+    .PhoneInputCountry {
+      margin-right: 8px;
+    }
+
+.inputBlock {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+
+  label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+}
+
+.input {
+   width: 100%;
+   outline: none;
+   font-size: 1rem;
+   background: transparent;
+   height: 36px;
+   padding: 0 10px;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+   transition: border-color 0.3s;
+
+   input {
+    border: none;
+
+    &:focus {
+    outline: none;
+    border-color: #2684FF;
+  }
+   }
+
+  &:hover {
+    border-color: #2684FF;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #2684FF;
+  }
+}
+
+textarea {
+  width: 100%;
+  height: 100px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  transition: border-color 0.3s;
+
+  &:hover {
+    border-color: #2684FF;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: #2684FF;
+  }
+}
+
+.btnBlock {
+  margin-top: 25px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 25px;
+  border-radius: 12px;
+  background-color: #ccc;
+  transition: background-color 0.3s;
+  font-weight: 500;
+
+  &:hover:not(:disabled) {
+    background-color: #2684FF;
+    color: white;
+  }
+
+  &:disabled {
+    background-color: #e0e0e0;
+    color: #999;
+    cursor: not-allowed;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .inputBlock {
+    width: 250px;
+  }
+
+  .input,
+  textarea {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .formBlock{
+    height: 80%;
+    overflow-y: auto;
+  }
+  .form {
+    flex-direction: column;
+    gap: 15px;
+    flex-wrap: nowrap;
+    height: 100%;
+  }
+
+  .input {
+    height: 40px;
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 120px;
+    font-size: 15px;
+  }
+
+  .btnBlock {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+.uploader {
+  max-width: 90%;
+  margin: 15px;
+  height: 250px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #fafafa;
+  text-align: center;
+
+  &Title {
+    margin-bottom: 15px;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &Label {
+    display: inline-block;
+    cursor: pointer;
+
+    .uploaderInput {
+      display: none;
+    }
+
+    .uploaderButton {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      font-size: 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: #2684FF;
+        color: white;
+      }
+    }
+  }
+
+  &Preview {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: 20px;
+    gap: 12px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+
+  &Image {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.uploaderPreview {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 12px;
+  padding-bottom: 10px;
+  max-width: 100%;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 10px;
+  }
+
+  .uploaderImage {
+    width: 190px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    flex-shrink: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .uploaderPreview {
+    gap: 8px;
+
+    .uploaderImage {
+      width: 120px;
+      height: 120px;
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .uploaderPreview {
+    gap: 6px;
+
+    .uploaderImage {
+      width: 100px;
+      height: 100px;
+    }
+  }
+}
+
+
+
+.btn {
+    display: inline-block;
+    padding: 8px 30px;
+    margin: 5px;
+    border-radius: 15px;
+    background-color: #ccc;
+    &:disabled {
+        border: 1px solid #ccc;
+        background-color: #f5f5f5;
+        &:hover{
+            background-color: #f5f5f5;
+        }
+      }
+      &:hover{
+        background-color: #2684FF;
+    }
+}
+
+.uploader {
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background-color: #fdfdfd;
+  text-align: center;
+  font-family: sans-serif;
+
+  &Title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #333;
+    display: flex;
+    align-items: center;
+  }
+
+  &Label {
+    display: inline-block;
+    cursor: pointer;
+
+    .uploaderInput {
+      display: none;
+    }
+
+    .uploaderButton {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #fff;
+      color: #000;
+      font-size: 14px;
+      border-radius: 8px;
+      transition: background 0.3s;
+
+      &:hover {
+        background-color: #2684FF;
+        color: white;
+      }
+    }
+  }
+
+  &Preview {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 12px;
+    margin-top: 25px;
+    padding-bottom: 8px;
+    scroll-behavior: smooth;
+
+    &::-webkit-scrollbar {
+      height: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #ccc;
+      border-radius: 4px;
+    }
+  }
+}
+
+.uploaderPreview {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 12px;
+  margin-top: 25px;
+  padding: 5px;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 4px;
+  }
+}
+
+.uploaderImageWrapper {
+  position: relative;
+  width: 190px;
+  height: 120px;
+  flex-shrink: 0;
+
+  &:hover .overlay {
+    opacity: 1;
+  }
+}
+
+.uploaderImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 8px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.deleteBtn {
+  margin: auto;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 4px;
+  font-size: 14px;
+
+  &:hover {
+    color: #ff4d4f;
+  }
+}
+
+@media (max-width: 1024px) {
+  .inputBlock {
+    width: 100%;
+  }
+
+  .input,
+  textarea {
+    width: 100%;
+  }
+
+  .form {
+    flex-direction: column;
+  }
+
+  .btnBlock {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .formBlock {
+    padding: 0 15px;
+  }
+
+  .btnBlock {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .uploader {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .uploaderImageWrapper {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn {
+    font-size: 14px;
+    padding: 6px 20px;
+  }
+
+  .btnBlock {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .uploaderTitle {
+    font-size: 16px;
+  }
+
+  .uploaderButton {
+    font-size: 12px;
+    padding: 8px 15px;
+  }
+
+  .deleteBtn {
+    font-size: 12px;
+  }
+}

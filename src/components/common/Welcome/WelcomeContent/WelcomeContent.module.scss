@@ -1,0 +1,35 @@
+.bannerInner {
+    position: relative;
+    width: 100%;
+    display: flex;
+}
+
+.container {
+    width: 100%;
+    padding: 0 15px;
+    margin: 0 100px;
+}
+
+.bannerContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 200px;
+    text-align: center;
+}
+
+.sub{
+    font-size: 30px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 52px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif;
+    line-height: 60px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}

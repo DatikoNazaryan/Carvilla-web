@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 45px;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 99;
+}
+
+.link {
+  display: inline-block;
+  padding: 5px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  border: 1px solid #ffffff;
+  text-decoration: none;
+  color: #ffffff;
+  &:hover {
+    background-color: #4e4ffa;
+   }
+}
+
+.logo {
+  color: #ffffff;
+  font-size: 24px;
+  letter-spacing: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+

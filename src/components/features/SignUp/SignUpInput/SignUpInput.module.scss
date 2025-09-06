@@ -1,0 +1,60 @@
+.input {
+  width: 230px;
+  height: 30px;
+  margin: 10px 0;
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  padding-left: 10px;
+  outline: none;
+  transition: border-color 0.2s;
+  font-size: 16px;
+}
+
+  .errorInput {
+    background-color: #f98f8f;
+    border: 1px solid #f98f8f;
+  }
+
+  .error {
+    color: #f98f8f;
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+  .inputBlock {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 230px;
+  flex-wrap: wrap;
+
+  input {
+    width: 100%;
+    padding: 10px 40px 10px 10px;
+    position: relative;    
+  }
+
+  .toggleIcon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #666;
+  font-size: 18px;
+
+    &:hover {
+      color: #000;
+    }
+  }
+}
+
+.name {
+  text-transform: capitalize;
+}

@@ -1,0 +1,96 @@
+.openPopup {
+    margin-top: 10px;
+    padding-left: 15px;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  .carsBlock {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+  }
+
+  @media (max-width: 768px) {
+      .carsBlock {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+      }
+  }
+
+.styleButton {
+  background-color: #fff;
+  height: 40px;
+  color: #121212;
+  border-radius: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: background-color 0.5s ease, font-weight 0.5s ease;
+  z-index: 0;
+
+  &:hover {
+    background-color: #ddd;
+  }
+}
+
+.buttonDecor {
+  position: absolute;
+  inset: 0;
+  border-radius: 1.5rem;
+  background-color: #ddd;
+  transform: translateX(-100%);
+  transition: transform 0.3s, background-color 0.5s ease;
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.buttonIcon {
+  width: 48px;
+  height: 100%;
+  background-color: #ddd;
+  display: grid;
+  place-items: center;
+  margin-right: 10px;
+  transition: background-color 0.5s ease;
+}
+
+.buttonText {
+  display: inline-block;
+  transition: color 0.2s;
+  padding: 2px 1.5rem 2px 0.75rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  max-width: 150px;
+
+  &:hover {
+    color: #000;
+  }
+}
+
+.buttonHoverEffect:hover .buttonDecor {
+  transform: translateX(0);
+}
+
+  
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    height: calc(100% - 100px);
+  }
