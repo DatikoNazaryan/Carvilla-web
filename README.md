@@ -1,88 +1,75 @@
-🚘 Carvilla Web App
+# 🚘 Carvilla Web App  
 
-A web-based version of Carvilla, implemented in React.js, delivering a full-featured car management platform including authentication, card management, and a personalized feed—all powered by Redux and persistent storage.
+A web-based version of Carvilla, implemented in **React.js**, delivering a full-featured car management platform including authentication, card management, and a personalized feed—all powered by **Redux** and persistent storage.  
 
-⚙️ Tech Stack
+---
 
-React.js – UI development
+## ⚙️ Tech Stack  
+- **React.js** – UI development  
+- **React Router** – Routing system  
+- **Redux Toolkit** – State management  
+- **LocalStorage / SessionStorage** – Persistent data  
+- **Formik + Yup** – Forms & validation  
+- **Vite / CRA** – Development & build  
 
-React Router – Routing system
+---
 
-Redux Toolkit – State management
+## 🚀 Features  
 
-LocalStorage / SessionStorage – Persistent data
+### 🧭 Navigation System  
 
-Formik + Yup – Forms & validation
+**Auth Routes**  
+- `/login` → Login for registered users  
+- `/signup` → User registration  
+- Access: Unauthorized users only  
 
-Vite / CRA – Development & build
+**Protected Routes**  
+- `/feed` → Global card feed (with filters & sorting)  
+- `/profile` → Current user profile  
+- `/profile/:userId` → View other users’ profiles  
+- Access: Authorized users only  
 
-🚀 Features
-🧭 Navigation System
+**Redirection Logic**  
+- Unauthorized access → `/login`  
+- Authenticated access to `/login` or `/signup` → `/feed`  
 
-Auth Routes
+---
 
-/login → Login for registered users
+### 👤 Authentication  
+- Login and Signup with validation  
+- “Remember Me” support via LocalStorage  
+- Real-time error reset on input change  
+- Auto-login from local storage if remembered  
 
-/signup → User registration
+---
 
-Access: Unauthorized users only
+### 📝 Cards Management  
+- Create, edit, update, delete, search and view cards  
+- Add/remove cards to/from favorites  
+- Sort and filter cards (all vs. favorites, by date)  
+- Current user’s cards are editable (highlighted background)  
 
-Protected Routes
+---
 
-/feed → Global card feed (with filters & sorting)
+### 🧑‍🤝‍🧑 User Sidebar  
+- List all registered users (except current)  
+- Navigate to other users’ profile pages  
+- Message if no other users available  
 
-/profile → Current user profile
+---
 
-/profile/:userId → View other users’ profiles
+### 🪄 UI Enhancements  
+- Custom modal for creating cards  
+- Scroll-to-top button in feed  
+- Inline validation and error hints  
+- Loader during initial data fetch  
 
-Access: Authorized users only
+---
 
-Redirection Logic
+## 📦 Local Data Structure  
 
-Unauthorized access → /login
-
-Authenticated access to /login or /signup → /feed
-
-👤 Authentication
-
-Login and Signup with validation
-
-“Remember Me” support via LocalStorage
-
-Real-time error reset on input change
-
-Auto-login from local storage if remembered
-
-📝 Cards Management
-
-Create, edit, update, delete, search and view cards
-
-Add/remove cards to/from favorites
-
-Sort and filter cards (all vs. favorites, by date)
-
-Current user’s cards are editable (highlighted background)
-
-🧑‍🤝‍🧑 User Sidebar
-
-List all registered users (except current)
-
-Navigate to other users’ profile pages
-
-Message if no other users available
-
-🪄 UI Enhancements
-
-Custom modal for creating cards
-
-Scroll-to-top button in feed
-
-Inline validation and error hints
-
-Loader during initial data fetch
-
-📦 Local Data Structure
-👥 allUsers
+### 👥 allUsers  
+```json
 [
   {
     "id": "string",
@@ -93,32 +80,3 @@ Loader during initial data fetch
     "favoriteIds": ["string"]
   }
 ]
-
-🚘 allCars
-[
-  {
-    "id": "string",
-    "title": "string",
-    "description": "string",
-    "creationDate": "string",
-    "authorId": "string"
-  }
-]
-
-🕒 Simulated Data Fetch with Delay and Error Fallback
-function fakeFetch(key) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const randomNum = Math.random();
-      if (randomNum < 0.3) reject();
-
-      const result = localStorage.getItem(key);
-      if (!result) {
-        localStorage.setItem(key, '[]');
-        resolve([]);
-      }
-
-      resolve(JSON.parse(result));
-    }, 2000);
-  });
-}# Carvilla-web
